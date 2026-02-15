@@ -17,7 +17,7 @@ Secret message is: 'You can find the source code here: https://github.com/docker
 
 Теперь запишем что-нибудь в файл в той же директории, что и `text.log`
 ```
-echo "Now I've got your message, that's not a secret anymore :)"
+echo "Now I've got your message, that's not a secret anymore :)" > answer.txt
 ```
 
 И отключимся от контейнера с помощью `exit`
