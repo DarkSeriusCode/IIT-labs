@@ -2,7 +2,7 @@
 
 Запустим образ Ubuntu с данным процессом и флагами `-ti`, чтобы контейнер ждал нашего ввода
 ```
-sudo docker run -it --name test1 ubuntu sh -c 'while true; do echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website; done'
+docker run -it --name test1 ubuntu sh -c 'while true; do echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website; done'
 ```
 
 Однако, просто так это работать не будет, т.к отсутствует `curl`:

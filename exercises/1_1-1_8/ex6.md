@@ -2,7 +2,7 @@
 
 Запустим контейнер:
 ```
-sudo docker run -it devopsdockeruh/pull_exercise
+docker run -it devopsdockeruh/pull_exercise
 ```
 Приложение ожидает от нас пароль, который можно посмотреть в `README` на странице образа на `DockerHub`
 

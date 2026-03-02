@@ -2,8 +2,8 @@
 
 У нас есть 3 незапущенных docker контейнера и 1 docker образ, которые больше не нужны:
 ```
-sudo docker ps -a
-sudo docker image ls
+docker ps -a
+docker image ls
 ```
 Выведет:
 ```
@@ -18,7 +18,7 @@ nginx        latest    5cdef4ac3335   10 days ago   161MB
 
 Чтобы удалить незапущенные контейнеры контейнеры используем:
 ```
-sudo docker container prune
+docker container prune
 ```
 
 После выполнения команды получим:
@@ -29,7 +29,7 @@ CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
 Теперь удалим лишние образы используя:
 ```
-sudo docker image rm nginx
+docker image rm nginx
 ```
 После выполнение получим:
 ```
@@ -47,8 +47,8 @@ Deleted: sha256:a8ff6f8cbdfd6741c10dd183560df7212db666db046768b0f05bbc3904515f03
 
 Теперь нет ни контейнеров, ни образов
 ```
-sudo docker ps -a
-sudo docker image ls
+docker ps -a
+docker image ls
 ```
 
 ```

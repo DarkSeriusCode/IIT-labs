@@ -2,12 +2,12 @@
 
 Запустим контейнер по образу `devopsdockeruh/simple-web-service:ubuntu` с флагами `-dti`, назовём контейнер `secret`
 ```
-sudo docker run -dit --name secret devopsdockeruh/simple-web-service:ubuntu
+docker run -dit --name secret devopsdockeruh/simple-web-service:ubuntu
 ```
 
 Зайдём в контейнер и посмотрим на секретное сообщение в файле `text.log`
 ```
-sudo docker exec -it secret bash
+docker exec -it secret bash
 tail -f text.log
 ```
 В файле много раз выводится текущая дата и следующее собщение:

@@ -3,14 +3,14 @@
 Запустим 3 контейнера в detached режиме. Будем запускать `nginx`:
 
 ```
-sudo docker run -d nginx
-sudo docker run -d nginx
-sudo docker run -d nginx
+docker run -d nginx
+docker run -d nginx
+docker run -d nginx
 ```
 
 После этого посмотрим список работающих контейнеров:
 ```
-sudo docker ps
+docker ps
 ```
 Увидим, что все 3 контейнера работают:
 ```
@@ -22,9 +22,9 @@ b1e4a547028e   nginx     "/docker-entrypoint.…"   2 days ago   Up 2 seconds   
 
 Остановим 2 контейнера и посмотрим какие сейчас работают:
 ```
-sudo docker stop d8
-sudo docker stop dc
-sudo docker ps -a
+docker stop d8
+docker stop dc
+docker ps -a
 ```
 Получим:
 ```

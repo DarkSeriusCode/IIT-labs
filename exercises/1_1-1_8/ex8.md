@@ -11,8 +11,8 @@ CMD server
 
 Соберм и запустим
 ```
-sudo docker build . -t web-server
-sudo docker run web-server
+docker build . -t web-server
+docker run web-server
 ```
 
 Вы выходе получим:
@@ -28,5 +28,5 @@ sudo docker run web-server
 ```
 
 Это работает потому, что в `workdir` контейнера есть исполняемый файл `server`, а т.к контейнер просто
-запускает программу, переданную как последний аргумент в `sudo docker run ...`, то передав программу
+запускает программу, переданную как последний аргумент в `docker run ...`, то передав программу
 через `CMD` в `Dockerfile` нового образа, мы просто задаём "значение по умолчанию".

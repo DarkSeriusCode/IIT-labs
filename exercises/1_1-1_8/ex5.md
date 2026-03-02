@@ -2,13 +2,13 @@
 
 Загрузим образы `devopsdockeruh/simple-web-service:ubuntu` и `devopsdockeruh/simple-web-service:alpine`
 ```
-sudo docker pull devopsdockeruh/simple-web-service:alpine
-sudo docker pull devopsdockeruh/simple-web-service:ubuntu
+docker pull devopsdockeruh/simple-web-service:alpine
+docker pull devopsdockeruh/simple-web-service:ubuntu
 ```
 
 Сравним их размеры, для этого посмотрим список загруженных образов
 ```
-sudo docker image ls
+docker image ls
 ```
 Выведет:
 ```
@@ -20,8 +20,8 @@ devopsdockeruh/simple-web-service   alpine    fd312adc88e0   4 years ago   15.7M
 
 Далее проверим работу контейнера созданного по образу на основе `Alpine`.
 ```
-sudo docker run -dit --name serv devopsdockeruh/simple-web-service:alpine
-sudo docker exec -it serv sh
+docker run -dit --name serv devopsdockeruh/simple-web-service:alpine
+docker exec -it serv sh
 # Уже внутри контейнера
 tait -s text.log
 ```

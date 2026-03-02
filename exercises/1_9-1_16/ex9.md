@@ -2,7 +2,7 @@
 
 Используя образ `devopsdockeruh/simple-web-service` создадим контейнер, который пишет логи в файл `text.log`
 ```
-sudo docker run -v $(pwd)/logs/text.log:/usr/src/app/text.log -d devopsdockeruh/simple-web-service
+docker run -v $(pwd)/logs/text.log:/usr/src/app/text.log -d devopsdockeruh/simple-web-service
 ```
 
 Таким образом содержимое файла:

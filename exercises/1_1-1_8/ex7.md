@@ -29,10 +29,10 @@ CMD ./script.sh
 
 Соберём образ с помощью
 ```
-sudo docker build . -t curler
+docker build . -t curler
 ```
 
-Можно заметить, что образ появился в списке (`sudo docker image ls`)
+Можно заметить, что образ появился в списке (`docker image ls`)
 ```
 REPOSITORY   TAG       IMAGE ID       CREATED              SIZE
 curler       latest    a62ccc1a95fe   About a minute ago   158MB
@@ -43,7 +43,7 @@ alpine       3.19      83b2b6703a62   4 months ago         7.4MB
 
 Теперь убедимся, что всё работает, запустив
 ```
-sudo docker run -it curler
+docker run -it curler
 ```
 Введя адрес `helsinki.fi`, получим
 ```
