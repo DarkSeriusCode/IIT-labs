@@ -1,0 +1,23 @@
+services:
+  frontend:
+    image: rustykrabik/frontend
+    build:
+      context: example-frontend
+      args:
+        REACT_APP_BACKEND_URL: http://localhost:8080
+    ports:
+      - 5000:5000
+
+  backend:
+    image: rustykrabik/backend
+    build: example-backend
+    environment:
+      - REQUEST_ORIGIN=http://localhost:5000
+      - REDIS_HOST=redis
+    ports:
+      - 8080:8080
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:8
