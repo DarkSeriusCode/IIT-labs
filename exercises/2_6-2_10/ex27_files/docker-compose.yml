@@ -1,0 +1,36 @@
+services:
+  frontend:
+    image: rustykrabik/frontend
+    build:
+      context: example-frontend
+      args:
+        REACT_APP_BACKEND_URL: http://localhost:8080
+    ports:
+      - 5000:5000
+
+  backend:
+    image: rustykrabik/backend
+    build: example-backend
+    environment:
+      - REQUEST_ORIGIN=http://localhost:5000
+      - REDIS_HOST=redis
+      - POSTGRES_HOST=db
+      - POSTGRES_USER=God
+      - POSTGRES_PASSWORD=Jesus
+    ports:
+      - 8080:8080
+    depends_on:
+      - redis
+      - db
+
+  redis:
+    image: redis:8
+
+  db:
+    image: postgres:13.2-alpine
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=God
+      - POSTGRES_PASSWORD=Jesus
+    volumes:
+      - ./database:/var/lib/postgresql/data
