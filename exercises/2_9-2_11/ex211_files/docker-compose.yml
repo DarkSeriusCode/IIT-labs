@@ -1,0 +1,6 @@
+services:
+  haskell-dev-env:
+    build: .
+    command: make
+    volumes:
+      - ./project/:/usr/src/app
