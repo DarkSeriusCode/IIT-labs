@@ -1,0 +1,16 @@
+#! /bin/sh
+
+GIT_REPO=$1
+DOCKER_TAG=$2
+
+if [ -z "$GIT_REPO" ] || [ -z "$DOCKER_TAG" ]; then
+    echo "You must provide Git repo and Docker tag to build with!"
+    exit 1
+fi
+
+git clone "https://github.com/$GIT_REPO" ./tmp
+cd tmp
+docker build . -t "$DOCKER_TAG"
+docker login -u "$DOCKER_USER" -p "$DOCKER_PWD"
+docker push "$DOCKER_TAG"
+rm -rf tmp
